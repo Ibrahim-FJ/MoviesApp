@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="viewModel"
-            type="com.example.moviesapp.viewmodel.MoviesViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,28 +12,20 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="293dp"
-            android:text="@{viewModel.moviesList.toString()}"
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_id"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="192dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="177dp"
-            android:layout_marginBottom="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            app:layout_constraintVertical_bias="0.0"
+            app:navGraph="@navigation/nav_graph"
+            tools:layout="@layout/fragment_movie_list" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
