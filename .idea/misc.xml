@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/lenovo/MoviesApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/lenovo/MoviesApp/app/src/main/res/layout/fragment_movie.xml" value="0.12771739130434784" />
-        <entry key="..\:/Users/lenovo/MoviesApp/app/src/main/res/layout/fragment_movie_detail.xml" value="0.1" />
-        <entry key="..\:/Users/lenovo/MoviesApp/app/src/main/res/layout/fragment_movie_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33842946490618486" />
+        <entry key="app/src/main/res/layout/fragment_movie_detail.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_movie_list.xml" value="0.5349922239502333" />
+        <entry key="app/src/main/res/layout/movie_card.xml" value="0.5" />
       </map>
     </option>
   </component>
