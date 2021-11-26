@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.moviesapp.R
+import com.example.moviesapp.adapter.PhotoGridAdapter
 import com.example.moviesapp.viewmodel.ResultsItem
 
 @BindingAdapter("imageUrl")
