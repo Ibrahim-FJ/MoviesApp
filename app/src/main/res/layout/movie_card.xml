@@ -2,7 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="resultItem"
+            type="com.example.moviesapp.viewmodel.ResultsItem" />
 
+    </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="200dp"
@@ -27,14 +32,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.311"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                tools:srcCompat="@tools:sample/backgrounds/scenic"
+                app:imageUrl="@{resultItem.posterPath}"/>
+
 
             <TextView
                 android:id="@+id/movie_title_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="28dp"
-                android:text="TextView"
+                android:text="@{resultItem.title}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
