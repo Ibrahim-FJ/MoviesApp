@@ -20,19 +20,18 @@ class MoviesViewModel: ViewModel() {
 
 
     private fun getMovies() {
+        println("Hello")
+
         viewModelScope.launch {
             try {
                 _moviesList.value =
                     MovieApi.retrofitService.getPopularMovies().results
-                println(_moviesList.value)
 
             }catch (e: Exception){
                Log.d("Error", e.message.toString())
             }
         }
     }
-
-
 
 
 }

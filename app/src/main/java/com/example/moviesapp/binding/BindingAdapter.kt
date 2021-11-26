@@ -4,7 +4,11 @@ import android.widget.ImageView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.ImageLoader
+import coil.decode.SvgDecoder
 import coil.load
+import coil.request.ImageRequest
+import com.bumptech.glide.Glide
 import com.example.moviesapp.R
 import com.example.moviesapp.adapter.PhotoGridAdapter
 import com.example.moviesapp.viewmodel.ResultsItem
@@ -20,6 +24,27 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
     }
 }
 
+
+
+
+//@BindingAdapter("imageUrl")
+//fun bindImage(imgView: ImageView, imgUrl: String?){
+//    imgUrl.let {
+//        val imageLoader = ImageLoader.Builder(imgView.context)
+//            .componentRegistry { add(SvgDecoder(imgView.context)) }
+//            .build()
+//
+//        val request = ImageRequest.Builder(imgView.context)
+//            .placeholder(R.drawable.loading_animation)
+//            .data(imgUrl)
+//            .target(imgView)
+//            .build()
+//
+//        imageLoader.enqueue(request)
+//    }
+//
+//
+//}
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<ResultsItem>?){
