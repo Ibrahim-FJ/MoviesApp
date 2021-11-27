@@ -5,61 +5,57 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
+import com.example.moviesapp.R
 import com.example.moviesapp.network.MovieApi
 import kotlinx.coroutines.launch
 
-
-//9
-enum class ApiStatus { LOADING , ERROR , DONE }
-
+enum class ApiStatus{LOADING, ERROR, DONE}
 
 
 class MoviesViewModel: ViewModel() {
-
-    private var _moviesList = MutableLiveData<List<ResultsItem?>>()
+    private val _moviesList = MutableLiveData<List<ResultsItem?>>()
     val moviesList: LiveData<List<ResultsItem?>> = _moviesList
-
-    //10
     private val _status = MutableLiveData<ApiStatus>()
     val status: LiveData<ApiStatus> = _status
 
-//12
+
+
     val movieTitle = MutableLiveData<String>()
     val movieImage = MutableLiveData<String>()
     val movieReleaseDate = MutableLiveData<String>()
     val movieVoteAverage = MutableLiveData<String>()
     val movieOverview = MutableLiveData<String>()
 
-//11
+
+
     init {
         getMovies()
     }
 
+
     private fun getMovies() {
-        println("Hello")
-
-
-        //6
         viewModelScope.launch {
-            //7
+            _status.value = ApiStatus.LOADING
             try {
-                //8
                 _moviesList.value =
                     MovieApi.retrofitService.getPopularMovies().results
+                _status.value = ApiStatus.DONE
 
             }catch (e: Exception){
                Log.d("Error", e.message.toString())
+                _status.value = ApiStatus.ERROR
+                _moviesList.value = listOf()
             }
         }
     }
 
 
-    //13
+
     fun setDetails(movieIndex: Int){
 
-        val item = _moviesList.value?.get(movieIndex)
+      val item = _moviesList.value?.get(movieIndex)
         movieTitle.value = item?.title
-        Log.e("TAG","title:${movieTitle.value}")
         movieImage.value = item?.posterPath
         movieReleaseDate.value = item?.releaseDate
         movieVoteAverage.value = item?.voteAverage.toString()

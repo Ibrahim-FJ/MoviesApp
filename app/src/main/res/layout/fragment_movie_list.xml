@@ -7,14 +7,16 @@
         <variable
             name="viewModel"
             type="com.example.moviesapp.viewmodel.MoviesViewModel" />
+        <variable
+            name="dsaf"
+            type="com.example.moviesapp.fragment.MovieListFragment" />
 
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragment.MovieListFragment"
-        android:background="@drawable/gradient">
+        tools:context=".fragment.MovieListFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,20 +24,37 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/movie_list_id"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:padding="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:listData="@{viewModel.moviesList}"
                 app:spanCount="2"
                 tools:itemCount="16"
-                tools:listitem="@layout/movie_card"
-                app:listData="@{viewModel.moviesList}"/>
+                tools:listitem="@layout/movie_card" />
+
+
+            <ImageView
+                android:id="@+id/statusImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="270dp"
+                app:apiStatus="@{viewModel.status}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 </layout>

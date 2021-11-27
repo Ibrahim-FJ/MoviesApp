@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/activity_main.xml" value="0.21384615384615385" />
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/fragment_blank.xml" value="0.2171875" />
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/fragment_movie_detail.xml" value="0.21384615384615385" />
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/fragment_movie_list.xml" value="0.21384615384615385" />
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/grid_movie_item.xml" value="0.21384615384615385" />
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/ic_connection_error.xml" value="0.21384615384615385" />
+        <entry key="..\:/Users/ibrah/Desktop/Tuwaiq/Android/MoviesApp/app/src/main/res/layout/movie_card.xml" value="0.21384615384615385" />
       </map>
     </option>
   </component>
