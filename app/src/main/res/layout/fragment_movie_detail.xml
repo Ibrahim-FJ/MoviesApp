@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="movieItem"
-            type="com.example.moviesapp.viewmodel.ResultsItem" />
+            name="movieViewModel"
+            type="com.example.moviesapp.viewmodel.MoviesViewModel" />
 
     </data>
 
@@ -18,10 +18,10 @@
 
         <TextView
             android:id="@+id/movieDetail_title_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
             android:layout_marginTop="32dp"
-            android:text="@{movieItem.title}"
+            android:text="@{movieViewModel.movieTitle}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/movieDetail_title_id"
             app:layout_constraintVertical_bias="0.941"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+
+            app:imageUrl="@{movieViewModel.movieImage}"
+            />
 
         <TextView
             android:id="@+id/movie_type_id"
@@ -57,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="68dp"
-            android:text="TextView"
+            android:text="@{movieViewModel.movieReleaseDate}"
             app:layout_constraintStart_toEndOf="@+id/movie_type_id"
             app:layout_constraintTop_toBottomOf="@+id/movie_poster_id" />
 
@@ -66,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="68dp"
-            android:text="TextView"
+            android:text="@{movieViewModel.movieVoteAverage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.558"
             app:layout_constraintStart_toEndOf="@+id/release_id"
@@ -76,7 +79,7 @@
             android:id="@+id/overview_id"
             android:layout_width="327dp"
             android:layout_height="277dp"
-            android:text="TextView"
+            android:text="@{movieViewModel.movieOverview}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

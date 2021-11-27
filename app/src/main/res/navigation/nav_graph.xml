@@ -7,9 +7,5 @@
     <fragment
         android:id="@+id/movieDetailFragment"
         android:name="com.example.moviesapp.fragment.MovieDetailFragment"
-        android:label="Overviwe" />
-    <fragment
-        android:id="@+id/movieListFragment"
-        android:name="com.example.moviesapp.fragment.MovieListFragment"
-        android:label="Movies" />
+
 </navigation>

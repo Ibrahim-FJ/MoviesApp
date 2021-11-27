@@ -50,5 +50,7 @@ class PhotoGridAdapter : ListAdapter<ResultsItem, PhotoGridAdapter.MovieViewHold
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val moviePhoto = getItem(position)
         holder.bind(moviePhoto)
+
+
     }
 }

@@ -10,9 +10,7 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="190dp"
-        android:layout_height="230dp"
-        app:cardBackgroundColor="@color/black"
+
         app:cardCornerRadius="30dp"
         app:cardUseCompatPadding="true"
    >
