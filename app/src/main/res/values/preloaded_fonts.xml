@@ -2,5 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/arapey_italic</item>
+        <item>@font/eater</item>
     </array>
 </resources>
