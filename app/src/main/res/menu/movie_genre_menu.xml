@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <item android:title="All Movies"
+            android:id="@+id/all_movies"/>
+        <item android:title="Action"
+            android:id="@+id/action_item"/>
+        <item android:title="Adventure"
+            android:id="@+id/adventure_item"/>
+        <item android:title="Comedy"
+            android:id="@+id/comedy_item"/>
+        <item android:title="Crime"
+            android:id="@+id/crime_item" />
+        <item android:title="Drama"
+            android:id="@+id/drama_item"/>
+
+</menu>
+

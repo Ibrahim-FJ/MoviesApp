@@ -18,9 +18,6 @@ data class Response(
 )
 
 
-
-
-
 data class ResultsItem(
 
 	@Json(name="overview")

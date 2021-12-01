@@ -56,7 +56,6 @@ class PhotoGridAdapter: ListAdapter<ResultsItem, PhotoGridAdapter.MovieViewHolde
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val moviePhoto = getItem(position)
         holder.bind(moviePhoto)
-
         holder.binding.movieCard.setOnClickListener {
             val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailFragment(movieIndex = position)
             holder.itemView.findNavController().navigate(action)
