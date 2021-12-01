@@ -1,20 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/sort_by"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_sort_24"
+        android:title="@string/sort_by"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/release_date"
+                android:title="@string/release_date" />
 
 
-        <item android:title="All Movies"
-            android:id="@+id/all_movies"/>
-        <item android:title="Action"
-            android:id="@+id/action_item"/>
-        <item android:title="Adventure"
-            android:id="@+id/adventure_item"/>
-        <item android:title="Comedy"
-            android:id="@+id/comedy_item"/>
-        <item android:title="Crime"
-            android:id="@+id/crime_item" />
-        <item android:title="Drama"
-            android:id="@+id/drama_item"/>
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/filter_by"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_filter_alt_24"
+        android:title="@string/filter_by"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/all_movies"
+                android:title="@string/all_movies" />
+            <item
+                android:id="@+id/action_item"
+                android:title="@string/action" />
+            <item
+                android:id="@+id/adventure_item"
+                android:title="@string/adventure" />
+            <item
+                android:id="@+id/comedy_item"
+                android:title="@string/comedy" />
+            <item
+                android:id="@+id/crime_item"
+                android:title="@string/crime" />
+            <item
+                android:id="@+id/drama_item"
+                android:title="@string/drama" />
+
+        </menu>
+
+    </item>
+
 
 </menu>
 

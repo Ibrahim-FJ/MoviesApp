@@ -12,13 +12,6 @@ import kotlinx.coroutines.launch
 
 enum class ApiStatus { LOADING, ERROR, DONE }
 
-enum class GenreFilter(val genreId: Int){
-    ACTION(28)
-    ,ADVENTURE(12)
-    , COMEDY(35)
-    , DRAMA(18)
-
-}
 
 
 class MoviesViewModel : ViewModel() {
@@ -26,7 +19,6 @@ class MoviesViewModel : ViewModel() {
     val moviesList: LiveData<List<ResultsItem?>> = _moviesList
     private val _status = MutableLiveData<ApiStatus>()
     val status: LiveData<ApiStatus> = _status
-    var _testList = MutableLiveData<List<ResultsItem?>>()
 
     val movieTitle = MutableLiveData<String>()
     val movieImage = MutableLiveData<String>()
@@ -40,8 +32,7 @@ class MoviesViewModel : ViewModel() {
     }
 
 
-
-      fun getMovies() {
+    fun getMovies() {
         viewModelScope.launch {
             _status.value = ApiStatus.LOADING
             try {
@@ -58,7 +49,7 @@ class MoviesViewModel : ViewModel() {
         }
     }
 
-    fun getMoviesByGenre(genreId: Int){
+    fun getMoviesByGenre(genreId: Int) {
         viewModelScope.launch {
             _status.value = ApiStatus.LOADING
             try {
@@ -76,6 +67,22 @@ class MoviesViewModel : ViewModel() {
     }
 
 
+    fun sortMoviesByReleaseDate(releaseDate: String) {
+        viewModelScope.launch {
+            _status.value = ApiStatus.LOADING
+            try {
+                _moviesList.value =
+                    MovieApi.retrofitService.sortPopularMoviesByReleaseDate(releaseDate).results
+                _status.value = ApiStatus.DONE
+
+
+            } catch (e: Exception) {
+                Log.d("Error", e.message.toString())
+                _status.value = ApiStatus.ERROR
+                _moviesList.value = mutableListOf()
+            }
+        }
+    }
 
 
     fun setDetails(movieIndex: Int) {

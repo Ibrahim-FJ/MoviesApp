@@ -22,21 +22,15 @@ class MovieDetailFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentMovieDetailBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.movieViewModel = moviesViewModel
-
-
-
 
         arguments.let {
 
             moviesViewModel.setDetails(it?.getInt("movieIndex")!!)
         }
-
-
-
 
         return binding.root
     }

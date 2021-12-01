@@ -5,13 +5,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.moviesapp.R
 import com.example.moviesapp.adapter.PhotoGridAdapter
 import com.example.moviesapp.databinding.FragmentMovieListBinding
-import com.example.moviesapp.viewmodel.GenreFilter
 import com.example.moviesapp.viewmodel.MoviesViewModel
 
 
@@ -45,6 +41,8 @@ class MovieListFragment : Fragment() {
         inflater.inflate(R.menu.movie_genre_menu, menu)
     }
 
+
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.all_movies -> {
@@ -65,6 +63,11 @@ class MovieListFragment : Fragment() {
             R.id.crime_item -> {
                 moviesViewModel.getMoviesByGenre(80)
             }
+
+            R.id.release_date -> {
+                moviesViewModel.sortMoviesByReleaseDate("primary_release_date.asc")
+            }
+
 
         }
         return true

@@ -6,6 +6,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -17,15 +18,16 @@ private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL).build()
 
-interface MoviesApi {
-    @GET("/3/movie/popular?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
-    suspend fun getPopularMovies() : Response
 
+interface MoviesApi {
+    @GET("/3/movie/{popular}?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
+    suspend fun getPopularMovies() : Response
 
     @GET("/3/movie/popular?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
     suspend fun getPopularMoviesByGenre(@Query("with_genres") genreID: Int): Response
 
-
+    @GET("/3/discover/movie?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
+    suspend fun sortPopularMoviesByReleaseDate(@Query("sort_by") releaseDate: String): Response
 }
 
 object MovieApi {
