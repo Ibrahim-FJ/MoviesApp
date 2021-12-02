@@ -64,8 +64,20 @@ class MovieListFragment : Fragment() {
                 moviesViewModel.getMoviesByGenre(80)
             }
 
-            R.id.release_date -> {
-                moviesViewModel.sortMoviesByReleaseDate("primary_release_date.asc")
+            R.id.release_date_2021 -> {
+                moviesViewModel.sortMoviesByReleaseDate(2021)
+            }
+            R.id.release_date_2020 -> {
+                moviesViewModel.sortMoviesByReleaseDate(2020)
+            }
+            R.id.release_date_2019 -> {
+                moviesViewModel.sortMoviesByReleaseDate(2019)
+            }
+            R.id.release_date_2018 -> {
+                moviesViewModel.sortMoviesByReleaseDate(2018)
+            }
+            R.id.release_date_2017 -> {
+                moviesViewModel.sortMoviesByReleaseDate(2017)
             }
 
 

@@ -27,7 +27,7 @@ interface MoviesApi {
     suspend fun getPopularMoviesByGenre(@Query("with_genres") genreID: Int): Response
 
     @GET("/3/discover/movie?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
-    suspend fun sortPopularMoviesByReleaseDate(@Query("sort_by") releaseDate: String): Response
+    suspend fun sortPopularMoviesByReleaseDate(@Query("year") releaseDateYear: Int): Response
 }
 
 object MovieApi {

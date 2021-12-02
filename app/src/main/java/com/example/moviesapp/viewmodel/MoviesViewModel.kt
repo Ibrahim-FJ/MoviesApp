@@ -67,12 +67,12 @@ class MoviesViewModel : ViewModel() {
     }
 
 
-    fun sortMoviesByReleaseDate(releaseDate: String) {
+    fun sortMoviesByReleaseDate(releaseDateYear: Int) {
         viewModelScope.launch {
             _status.value = ApiStatus.LOADING
             try {
                 _moviesList.value =
-                    MovieApi.retrofitService.sortPopularMoviesByReleaseDate(releaseDate).results
+                    MovieApi.retrofitService.sortPopularMoviesByReleaseDate(releaseDateYear).results
                 _status.value = ApiStatus.DONE
 
 
