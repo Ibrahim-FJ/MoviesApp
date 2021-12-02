@@ -41,17 +41,19 @@
             tools:text="testdsajlgknafdkljglkadj" />
 
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/movie_poster_id"
             android:layout_width="400dp"
             android:layout_height="400dp"
+
             android:layout_marginTop="108dp"
             app:imageUrl="@{movieViewModel.movieImage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            app:shapeAppearanceOverlay="@style/Circular"/>
 
         <TextView
             android:textColor="@color/white"
@@ -113,8 +115,9 @@
             android:layout_width="33dp"
             android:layout_height="17dp"
             android:layout_marginTop="516dp"
-            app:layout_constraintEnd_toStartOf="@+id/overview_id"
-            app:layout_constraintHorizontal_bias="1.0"
+
+            app:layout_constraintEnd_toStartOf="@+id/release_id"
+            app:layout_constraintHorizontal_bias="0.734"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_share_24" />
