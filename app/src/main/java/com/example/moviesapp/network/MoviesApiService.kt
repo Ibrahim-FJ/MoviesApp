@@ -20,7 +20,7 @@ private val retrofit = Retrofit.Builder()
 
 
 interface MoviesApi {
-    @GET("/3/movie/{popular}?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
+    @GET("/3/movie/popular?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")
     suspend fun getPopularMovies() : Response
 
     @GET("/3/movie/popular?api_key=03c0d5c4ca5f7d4b4312c4d863deba39")

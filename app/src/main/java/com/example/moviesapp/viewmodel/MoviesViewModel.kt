@@ -25,6 +25,7 @@ class MoviesViewModel : ViewModel() {
     val movieReleaseDate = MutableLiveData<String>()
     val movieVoteAverage = MutableLiveData<String>()
     val movieOverview = MutableLiveData<String>()
+    val movieId = MutableLiveData<Int>()
 
 
     init {
@@ -93,6 +94,7 @@ class MoviesViewModel : ViewModel() {
         movieReleaseDate.value = item?.releaseDate
         movieVoteAverage.value = item?.voteAverage.toString()
         movieOverview.value = item?.overview
+        movieId.value = item?.id
     }
 
 

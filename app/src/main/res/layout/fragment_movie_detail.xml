@@ -83,13 +83,13 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:textColor="@color/white"
-            android:layout_margin="8dp"
             android:id="@+id/overview_id"
-            android:layout_width="281dp"
-            android:layout_height="205dp"
+            android:layout_width="287dp"
+            android:layout_height="155dp"
+            android:layout_margin="8dp"
             android:layout_marginBottom="4dp"
             android:text="@={movieViewModel.movieOverview}"
+            android:textColor="@color/white"
             android:textSize="23sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,6 +107,18 @@
             app:layout_constraintTop_toTopOf="@+id/rate_id"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_baseline_star_24" />
+
+        <ImageView
+            android:id="@+id/shear"
+            android:layout_width="33dp"
+            android:layout_height="17dp"
+            android:layout_marginTop="516dp"
+            app:layout_constraintEnd_toStartOf="@+id/overview_id"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_share_24" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
